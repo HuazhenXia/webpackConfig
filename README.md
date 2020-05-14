@@ -2,6 +2,7 @@
 
 ## Step1: Config all necessary elements for a project
 **Finished: ES6, JSX, CSS, LESS, Images, Fonts**
+
 File Change listener, Hot autoFresh, file fingerprinter, file compression
 
 ## Step2: Optimze a project by Webpack 1

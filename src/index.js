@@ -9,7 +9,7 @@ class Test extends React.Component {
   render() {
 
     return (
-      <div className='red'>hello Test
+      <div className='red'>hello World
         <img src={logo}/>
       </div>
     )
