@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.less';
+
+
 class Test extends React.Component {
   render() {
 
     return (
-      <div>hello Test</div>
+      <div className='red'>hello Test</div>
     )
   }
 }
