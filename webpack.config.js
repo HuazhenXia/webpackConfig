@@ -8,5 +8,13 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  mode: 'production'
+  mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: 'babel-loader'
+      }
+    ]
+  }
 }
