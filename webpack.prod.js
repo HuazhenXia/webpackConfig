@@ -1,13 +1,13 @@
 'user strict';
 
 const path = require('path');
-const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name]_[chunkhash:8].js'
   },
   mode: 'production',
   module: {
@@ -19,14 +19,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'less-loader'
         ]
@@ -35,9 +35,9 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 10240
+              name: '[name]_[hash:8].[ext]'
             }
           }
         ]
@@ -45,13 +45,19 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name]_[hash:8][ext]'
+            }
+          }
         ]
       }
     ]
   },
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  }
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name]_[contenthash:8].css'
+    })
+  ]
 }
