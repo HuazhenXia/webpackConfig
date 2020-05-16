@@ -2,23 +2,23 @@
 
 ## Step1: Config all necessary elements for a project (Done)
 ### ES6, JSX: ###
-**config .babelrl file and add babel-loader in webpack.config.js**
+config .babelrl file and add babel-loader in webpack.config.js
 
-### CSS, LESS###
-**use less-loader, css-loader and style-loader**
+### CSS, LESS ###
+use less-loader, css-loader and style-loader
 
-### Images, Fonts###
-**file-loader, url-loader**
+### Images, Fonts ###
+file-loader, url-loader
 
-### File Change listener###
-**M1: add webpack --config scripts in package.json** <br />
+### File Change listener ###
+M1: add webpack --config scripts in package.json <br />
 ```
 "watch": "webpack --watch",
 ```
 **Disadvantage**: don't auto refresh browser<br />
 <br />
 
-**M2: add in webpack.config.js**
+M2: add in webpack.config.js
 ```
 watch: true,
 watchOptions: {...}
@@ -58,8 +58,8 @@ add devServer in webpack.config.js
 use nodejs to start a server and pass output of webpack to this server
 
 
-### file fingerprinter ### 
-There are 3 fingers: <br />
+### File Fingerprinter ###
+There are **3 fingers**: <br />
 **Hash**: Related to the whole project. One file change would change the hash of the whole project <br />
 **Chunkhash**: Realted to packaged chunks. Different entries would generate different chucnkhash <br />
 **Contenthash**: Related to file content. Contenthash wouldn't change if file content doesn't change<br />
@@ -90,7 +90,7 @@ new MiniCssExtractPlugin({
 })
 ```
 
-### files compression ### 
+### Files Compression ### 
 **HTML Files**: download html-webpack-plugin and add plgins for each html<br />
 ```
 new HtmlWebpackPlugin({
