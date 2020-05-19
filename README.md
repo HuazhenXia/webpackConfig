@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
 
 - [Architect a Complex App from scratch](#architect-a-complex-app-from-scratch)
   - [Step1: Config all necessary elements for a project (Done)](#step1-config-all-necessary-elements-for-a-project-done)
@@ -140,7 +140,9 @@ new OptimizeCssAssetsPlugin({
 
 ## Step2: Optimze the project by Webpack I
 ### Auto clear file folder ###
-**clean-webpack-plugin**
+**1. install clean-webpack-plugin**
+
+**2. add it in plugins in webpack config files**
 ```
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -148,6 +150,33 @@ plugins: [
     new CleanWebpackPlugin(),
     ...
 ]
+```
+
+**PostCSS-Autoprefixer for CSS3**
+**1. Install postcss-loader and autoprefixer**
+**2. Add it in less-loader**
+```
+{
+  test: /\.less$/,
+  use: [
+    MiniCssExtractPlugin.loader,
+    'css-loader',
+    'less-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        plugins: () => [
+          require('autoprefixer')({
+            overrideBrowserslist: ['last 2 version', '>1%', 'ios 7']
+  ...
+}
+```
+About browsers, it can also be added in package.json as browserslist
+```
+in package.js
+{
+  "browserslist": []
+}
 ```
 
 PostCSS,multi pages, source map, tree shaking, public resource, eslint, log, ssr
