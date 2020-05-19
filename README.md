@@ -118,7 +118,18 @@ new OptimizeCssAssetsPlugin({
 **JS Files**: uglifyjs-webpack-plugin is inside webpack. It's can also be downloaded to do paralle compression<br />
 
 ## Step2: Optimze the project by Webpack I
-Auto clear file folder, multi pages, source map, tree shaking, public resource, eslint, log, ssr
+### Auto clear file folder ###
+**clean-webpack-plugin**
+```
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+plugins: [
+    new CleanWebpackPlugin(),
+    ...
+]
+```
+
+PostCSS,multi pages, source map, tree shaking, public resource, eslint, log, ssr
 
 ## Step3: Optimze the project by Webpack II
 config packepage, config scripts, unit tests, smoking tests, Travis

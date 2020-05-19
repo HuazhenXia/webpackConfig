@@ -2,6 +2,8 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 module.exports = {
   entry: './src/index.js',
@@ -51,6 +53,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src/index.html'),
       filename: 'index.html',
@@ -64,21 +67,21 @@ module.exports = {
           minifyJS: true,
           removeComments: false
       }
-  }),
-  new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/test.html'),
-      filename: 'test.html',
-      chunks: ['test'],
-      inject: true,
-      minify: {
-          html5: true,
-          collapseWhitespace: true,
-          preserveLineBreaks: false,
-          minifyCSS: true,
-          minifyJS: true,
-          removeComments: false
-      }
-  })  
+    }),
+    new HtmlWebpackPlugin({
+        template: path.join(__dirname, 'src/test.html'),
+        filename: 'test.html',
+        chunks: ['test'],
+        inject: true,
+        minify: {
+            html5: true,
+            collapseWhitespace: true,
+            preserveLineBreaks: false,
+            minifyCSS: true,
+            minifyJS: true,
+            removeComments: false
+        }
+    })
   ],
   devServer: {
     contentBase: './dist',
