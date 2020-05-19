@@ -1,3 +1,24 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Architect a Complex App from scratch](#architect-a-complex-app-from-scratch)
+  - [Step1: Config all necessary elements for a project (Done)](#step1-config-all-necessary-elements-for-a-project-done)
+    - [ES6, JSX:](#es6-jsx)
+    - [CSS, LESS](#css-less)
+    - [Images, Fonts](#images-fonts)
+    - [File Change listener](#file-change-listener)
+    - [Hot Update](#hot-update)
+    - [File Fingerprinter](#file-fingerprinter)
+    - [Files Compression](#files-compression)
+  - [Step2: Optimze the project by Webpack I](#step2-optimze-the-project-by-webpack-i)
+    - [Auto clear file folder](#auto-clear-file-folder)
+  - [Step3: Optimze the project by Webpack II](#step3-optimze-the-project-by-webpack-ii)
+  - [Step4: Apply plugins to analysis and make webpack fast](#step4-apply-plugins-to-analysis-and-make-webpack-fast)
+  - [Step5: Microservice for Front end: main app + subapps](#step5-microservice-for-front-end-main-app--subapps)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Architect a Complex App from scratch
 
 ## Step1: Config all necessary elements for a project (Done)
