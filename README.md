@@ -1,6 +1,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Architect a Complex App from scratch](#architect-a-complex-app-from-scratch)
   - [Step1: Config all necessary elements for a project (Done)](#step1-config-all-necessary-elements-for-a-project-done)
@@ -13,11 +13,14 @@
     - [Files Compression](#files-compression)
   - [Step2: Optimze the project by Webpack I](#step2-optimze-the-project-by-webpack-i)
     - [Auto clear file folder](#auto-clear-file-folder)
+    - [PostCSS-Autoprefixer for CSS3](#postcss-autoprefixer-for-css3)
   - [Step3: Optimze the project by Webpack II](#step3-optimze-the-project-by-webpack-ii)
   - [Step4: Apply plugins to analysis and make webpack fast](#step4-apply-plugins-to-analysis-and-make-webpack-fast)
   - [Step5: Microservice for Front end: main app + subapps](#step5-microservice-for-front-end-main-app--subapps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 
 # Architect a Complex App from scratch
 
@@ -152,7 +155,7 @@ plugins: [
 ]
 ```
 
-**PostCSS-Autoprefixer for CSS3**
+### PostCSS-Autoprefixer for CSS3 ###
 **1. Install postcss-loader and autoprefixer**
 **2. Add it in less-loader**
 ```
@@ -179,7 +182,17 @@ in package.js
 }
 ```
 
-PostCSS,multi pages, source map, tree shaking, public resource, eslint, log, ssr
+
+### PX to rem on Mobile ###
+**1. install px2rem-loader/lib-flexible**
+**2. add it in less-loader**
+```
+
+```
+
+
+
+**Unfinished**: multi pages, source map, tree shaking, public resource, eslint, log, ssr
 
 ## Step3: Optimze the project by Webpack II
 config packepage, config scripts, unit tests, smoking tests, Travis
